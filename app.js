@@ -1,3 +1,5 @@
+// This comment has no value whatsoever
+
 const express = require('express')
 const app = express()
 
