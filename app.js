@@ -1,4 +1,4 @@
-// Testing Discord webhook - part 1
+// Testing Discord webhook - part 2
 
 const express = require('express')
 const app = express()
@@ -16,7 +16,7 @@ app.get('/health', (req, res) => {
   // throw 'error...'
   // eslint-disable-next-line no-unreachable
   res.send('ok')
-})
+});
 
 // dummy end point for checking version updates in fly.io deployment:
 app.get('/version', (req, res) => {
