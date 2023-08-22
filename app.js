@@ -16,6 +16,7 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 
+// dummy end point for checking version updates in fly.io deployment:
 app.get('/version', (req, res) => {
   res.send('7') // change this string to ensure a new version deployed
 })
