@@ -12,7 +12,9 @@ primary_region = "arn"
 
 [http_service]
   internal_port = 8080
-  http_checks = []
+  http_checks = [
+    { interval = 15000, path = "/health" }
+  ]
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
