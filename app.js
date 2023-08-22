@@ -1,4 +1,4 @@
-// This comment has no value whatsoever
+// Testing Discord webhook - part 1
 
 const express = require('express')
 const app = express()
