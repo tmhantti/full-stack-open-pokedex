@@ -6,7 +6,7 @@ on:
       - master
   pull_request:
     branches: [master]
-    types: [opened, synchronize]      
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -38,9 +38,11 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.64.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-        
-      
+  tag_release:
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
+    steps:
+     - name: Bump version and push tag
+       uses: anothrNick/github-tag-action@1.64.0
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
