@@ -22,7 +22,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with:
-          severity: info
+          severity: error
           details: Failed to install dependencies
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}        
       - name: Check style
@@ -31,7 +31,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with:
-          severity: info
+          severity: error
           details: Failed to pass ESlint check
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}         
       - name: Build
@@ -40,7 +40,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with:
-          severity: info
+          severity: error
           details: Failed to build project
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}          
       - name: Perform tests
